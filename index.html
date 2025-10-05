@@ -4,69 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily-Dose</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://analyticseg.com/wp-content/uploads/2025/03/17802099901589897657.jpg") center/cover fixed;
+      color: #fff;
     }
-    h1 {
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 65px;
+      padding: 0 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 15, 30, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 16px rgba(147, 51, 234, 0.15);
+    }
+    .navbar a {
       color: #ffcc00;
-      margin: 20px 0;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-size: 17px;
+      position: relative;
+      transition: 0.3s;
+    }
+    .navbar a:hover {
+      color: #fff;
+      text-shadow: 0 0 6px #ffcc00;
+    }
+    .cynx-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .cynx-logo img {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #9333ea;
+    }
+    .logo-text span {
+      font-size: 22px;
+      color: #c9050b;
+      font-weight: 700;
+      text-shadow: 0 0 6px #c9050b;
+    }
+    .logo-text strong {
+      font-size: 22px;
+      color: #c9050b;
+      font-weight: 800;
+    }
+
+    /* Categories */
+    h1 {
+      margin-top: 30px;
+      color: #ffcc00;
+      text-shadow: 0 0 12px #ffcc00;
     }
     .categories {
       display: flex;
       justify-content: center;
-      gap: 30px;
       flex-wrap: wrap;
-      margin: 20px;
+      gap: 25px;
+      margin: 30px auto;
+      max-width: 900px;
     }
     .category-icon {
-      background: rgba(50, 40, 0, 0.8);
+      flex: 1 1 150px;
+      max-width: 180px;
+      background: rgba(50, 40, 0, 0.7);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 0 10px #ffcc00;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: 0.3s;
+      text-align: center;
     }
     .category-icon:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       box-shadow: 0 0 20px #ffcc00;
+      background: rgba(50, 40, 0, 0.9);
     }
-    .items {
-      display: none;
-      margin: 20px auto;
-      width: 80%;
-      max-width: 600px;
+
+    /* Items */
+    #items-container {
+      margin: 20px auto 60px;
+      max-width: 700px;
+    }
+    .category-title {
+      font-size: 28px;
+      color: #ffcc00;
+      margin: 20px 0;
+      text-shadow: 0 0 6px #ffcc00;
     }
     .item {
-      background: rgba(30, 20, 0, 0.7);
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 6px;
-      box-shadow: 0 0 8px #ffcc00;
       display: flex;
       justify-content: space-between;
+      background: rgba(30, 20, 0, 0.7);
+      padding: 14px 18px;
+      margin: 10px 0;
+      border-radius: 6px;
+      box-shadow: 0 0 8px #ffcc00;
+      font-size: 18px;
     }
     .price {
       color: #ffcc00;
       font-weight: bold;
     }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: gray;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
-  <h1>☕ Our Menu</h1>
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#" class="cynx-logo">
+    <img src="https://i.postimg.cc/MGPhRDps/s-h-logo.jpg" alt="D-D Icon">
+    <div class="logo-text"><span>Sweet</span><strong>Home</strong></div>
+  </a>
+  <div class="nav-center">
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
 
-  <!-- Categories -->
-  <div class="categories" id="category-container"></div>
+<!-- Title -->
+<h1>☕ Our Menu</h1>
 
-  <!-- Items -->
-  <div id="items-container"></div>
+<!-- Categories -->
+<div class="categories" id="category-container"></div>
 
+<!-- Items -->
+<div id="items-container"></div>
+
+<!-- Script -->
 <script>
 const data = {
   "products": [
@@ -92,27 +188,28 @@ categories.forEach(cat => {
   categoryContainer.appendChild(div);
 });
 
-// Show items inside category
+// Show items
 function showItems(category) {
   itemsContainer.innerHTML = "";
-  const title = document.createElement("h2");
+  const title = document.createElement("div");
+  title.className = "category-title";
   title.innerText = category;
   itemsContainer.appendChild(title);
-
-  const itemsDiv = document.createElement("div");
-  itemsDiv.className = "items";
 
   data.products.filter(p => p.category === category).forEach(p => {
     const item = document.createElement("div");
     item.className = "item";
     item.innerHTML = `<span>${p.name}</span><span class="price">${p.price} EGP</span>`;
-    itemsDiv.appendChild(item);
+    itemsContainer.appendChild(item);
   });
-
-  itemsContainer.appendChild(itemsDiv);
-  itemsDiv.style.display = "block";
 }
 </script>
+
+<footer>© 2025 Sweet Home Café</footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
