@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet-Home</title>
+  <title>Daily-Dose</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,7 +45,6 @@
       text-decoration: none;
       margin: 10px 15px;
       font-size: 17px;
-      position: relative;
       transition: 0.3s;
     }
     .navbar a:hover {
@@ -157,8 +159,41 @@
       font-weight: bold;
     }
 
+    /* Branches section */
+    #branches {
+      background: rgba(20, 15, 0, 0.7);
+      padding: 40px 20px;
+      border-top: 2px solid #ffcc00;
+      box-shadow: 0 -5px 20px rgba(255, 204, 0, 0.3);
+    }
+    #branches h2 {
+      color: #ffcc00;
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ffcc00;
+    }
+    .branch {
+      max-width: 600px;
+      margin: 15px auto;
+      background: rgba(50, 40, 0, 0.6);
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 0 12px #ffcc00;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    .branch strong {
+      color: #ffcc00;
+      text-shadow: 0 0 6px #ffcc00;
+    }
+    .branch span {
+      display: block;
+      color: #ccc;
+    }
+
     footer {
-      margin-top: 60px;
+      margin-top: 40px;
       font-size: 14px;
       color: gray;
       text-align: center;
@@ -173,6 +208,8 @@
     <img src="https://i.postimg.cc/MGPhRDps/s-h-logo.jpg" alt="D-D Icon">
     <div class="logo-text"><span>Sweet</span><strong>Home</strong></div>
   </a>
+
+  <a href="#branches"><i class="fa-solid fa-location-dot"></i> فروعنا</a>
 </div>
 
 <!-- SEARCH BAR -->
@@ -186,7 +223,33 @@
 <!-- Items -->
 <div id="items-container"></div>
 
-<!-- Script -->
+<!-- Branches Section -->
+<section id="branches">
+  <h2>فروعنا</h2>
+  <div class="branch">
+    <strong>فرع : مدينه السلام</strong>
+    <span>شارع الجامع</span>
+    <span>📞 0502353245 | 01094004001</span>
+  </div>
+  <div class="branch">
+    <strong>فرع : قناة السويس</strong>
+    <span>برج التركي بجوار مطعم استاكوزا</span>
+    <span>📞 0502330555 | 01090881475</span>
+  </div>
+  <div class="branch">
+    <strong>فرع : الترعه</strong>
+    <span>مقابل الدفاع المدني</span>
+    <span>📞 0502252770 | 01022266663</span>
+  </div>
+  <div class="branch">
+    <strong>فرع : النخله</strong>
+    <span>تقاطع شارع النخلة مع مستشفى الصدر</span>
+    <span>📞 0502227720 | 01002999907</span>
+  </div>
+</section>
+
+<footer>© 2025 Sweet Home Café</footer>
+
 <script>
 const data = {
   "products": [
@@ -459,8 +522,7 @@ const data = {
 
   ]
 };
-
-// Extract unique categories
+// Extract categories
 const categories = [...new Set(data.products.map(p => p.category))];
 const categoryContainer = document.getElementById("category-container");
 const itemsContainer = document.getElementById("items-container");
@@ -474,7 +536,7 @@ categories.forEach(cat => {
   categoryContainer.appendChild(div);
 });
 
-// Show items by category
+// Show items
 function showItems(category) {
   itemsContainer.innerHTML = "";
   const title = document.createElement("div");
@@ -490,7 +552,7 @@ function showItems(category) {
   });
 }
 
-// 🔍 Search function
+// Search
 document.getElementById("search-input").addEventListener("input", function() {
   const searchValue = this.value.trim().toLowerCase();
   itemsContainer.innerHTML = "";
@@ -516,6 +578,19 @@ document.getElementById("search-input").addEventListener("input", function() {
 });
 </script>
 
-<footer>© 2025 Sweet Home Café</footer>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68e3e9d2c72178194fdad8e6/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+  
 </body>
 </html>
