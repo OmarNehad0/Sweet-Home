@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily-Dose</title>
+  <title>Sweet Home Café</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     html {
@@ -39,26 +39,13 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 8px 16px rgba(147, 51, 234, 0.15);
     }
-    .navbar a {
-      color: #ffcc00;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 10px 15px;
-      font-size: 17px;
-      transition: 0.3s;
-    }
-    .navbar a:hover {
-      color: #fff;
-      text-shadow: 0 0 6px #ffcc00;
-    }
 
-    /* LOGO */
+    /* Logo */
     .cynx-logo {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      margin-right: 20px;
       transition: transform 0.3s ease, filter 0.3s ease;
     }
     .cynx-logo img {
@@ -77,6 +64,40 @@
       font-size: 22px;
       color: #c9050b;
       font-weight: 800;
+    }
+
+    /* Navbar links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 17px;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 6px #ffcc00;
+    }
+
+    /* Social buttons */
+    .social-links a {
+      color: #ffcc00;
+      font-size: 20px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+      transform: scale(1.1);
     }
 
     /* Search bar */
@@ -204,12 +225,20 @@
 
 <!-- NAVBAR -->
 <div class="navbar">
+  <!-- Logo -->
   <a href="https://www.facebook.com/SweetHome6688" class="cynx-logo">
-    <img src="https://i.postimg.cc/MGPhRDps/s-h-logo.jpg" alt="D-D Icon">
+    <img src="https://i.postimg.cc/MGPhRDps/s-h-logo.jpg" alt="Sweet Home">
     <div class="logo-text"><span>Sweet</span><strong>Home</strong></div>
   </a>
 
-  <a href="#branches"><i class="fa-solid fa-location-dot"></i> فروعنا</a>
+  <!-- Links -->
+  <div class="nav-links">
+    <a href="#branches"><i class="fa-solid fa-location-dot"></i> فروعنا</a>
+    <div class="social-links">
+      <a href="https://www.facebook.com/SweetHome6688" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/sweethome8509?igsh=d2Q4a2NoZTlkZXRh" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
 </div>
 
 <!-- SEARCH BAR -->
