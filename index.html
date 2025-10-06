@@ -40,7 +40,6 @@
       box-shadow: 0 8px 16px rgba(147, 51, 234, 0.15);
     }
 
-    /* Logo */
     .cynx-logo {
       display: flex;
       align-items: center;
@@ -66,7 +65,6 @@
       font-weight: 800;
     }
 
-    /* Navbar links */
     .nav-links {
       display: flex;
       align-items: center;
@@ -87,7 +85,7 @@
       text-shadow: 0 0 6px #ffcc00;
     }
 
-    /* Social buttons */
+    /* Social links */
     .social-links a {
       color: #ffcc00;
       font-size: 20px;
@@ -124,11 +122,6 @@
     }
 
     /* Categories */
-    h1 {
-      margin-top: 30px;
-      color: #ffcc00;
-      text-shadow: 0 0 12px #ffcc00;
-    }
     .categories {
       display: flex;
       justify-content: center;
@@ -203,6 +196,7 @@
       box-shadow: 0 0 12px #ffcc00;
       line-height: 1.8;
       font-size: 18px;
+      position: relative;
     }
     .branch strong {
       color: #ffcc00;
@@ -211,6 +205,19 @@
     .branch span {
       display: block;
       color: #ccc;
+    }
+
+    .whatsapp-link {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      color: #25D366;
+      font-size: 26px;
+      transition: 0.3s;
+    }
+    .whatsapp-link:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
     }
 
     footer {
@@ -225,18 +232,16 @@
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <!-- Logo -->
   <a href="https://www.facebook.com/SweetHome6688" class="cynx-logo">
     <img src="https://i.postimg.cc/MGPhRDps/s-h-logo.jpg" alt="Sweet Home">
     <div class="logo-text"><span>Sweet</span><strong>Home</strong></div>
   </a>
 
-  <!-- Links -->
   <div class="nav-links">
     <a href="#branches"><i class="fa-solid fa-location-dot"></i> فروعنا</a>
     <div class="social-links">
-      <a href="https://www.facebook.com/SweetHome6688" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/sweethome8509?igsh=d2Q4a2NoZTlkZXRh" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/SweetHome6688" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/sweethome8509?igsh=d2Q4a2NoZTlkZXRh" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 </div>
@@ -255,22 +260,30 @@
 <!-- Branches Section -->
 <section id="branches">
   <h2>فروعنا</h2>
+
   <div class="branch">
+    <a href="https://wa.me/201094004001" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
     <strong>فرع : مدينه السلام</strong>
     <span>شارع الجامع</span>
     <span>📞 0502353245 | 01094004001</span>
   </div>
+
   <div class="branch">
+    <a href="https://wa.me/201090881475" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
     <strong>فرع : قناة السويس</strong>
     <span>برج التركي بجوار مطعم استاكوزا</span>
     <span>📞 0502330555 | 01090881475</span>
   </div>
+
   <div class="branch">
+    <a href="https://wa.me/201022266663" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
     <strong>فرع : الترعه</strong>
     <span>مقابل الدفاع المدني</span>
     <span>📞 0502252770 | 01022266663</span>
   </div>
+
   <div class="branch">
+    <a href="https://wa.me/201002999907" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
     <strong>فرع : النخله</strong>
     <span>تقاطع شارع النخلة مع مستشفى الصدر</span>
     <span>📞 0502227720 | 01002999907</span>
